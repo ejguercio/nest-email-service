@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
-import * as dotenv from 'dotenv';
 import * as sgMail from '@sendgrid/mail';
-
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 @Injectable()
@@ -13,7 +12,7 @@ export class MailService {
   async sendEmail(name: string, subject: string, text: string) {
     const msg = {
       to: process.env.MAIL_TO, // Destinatario del mensaje
-      from: process.env.SENDERGRID_MAIL_AUTH, // Correo verificado en SendGrid
+      from: process.env.SENDGRID_MAIL_AUTH, // Correo verificado en SendGrid
       subject,
       text: `Mensaje de ${name}\n\n${text}`,
     };
