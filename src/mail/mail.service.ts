@@ -10,14 +10,14 @@ export class MailService {
   }
 
   async sendEmail(name: string, subject: string, text: string) {
-    const msg = {
-      to: process.env.MAIL_TO, // Destinatario del mensaje
-      from: process.env.SENDGRID_MAIL_AUTH, // Correo verificado en SendGrid
-      subject,
-      text: `Mensaje de ${name}\n\n${text}`,
-    };
-
     try {
+      const msg = {
+        to: process.env.MAIL_TO, // Destinatario del mensaje
+        from: process.env.SENDGRID_MAIL_AUTH, // Correo verificado en SendGrid
+        subject,
+        text: `Mensaje de ${name}\n\n${text}`,
+      };
+
       const infoResponse = await sgMail.send(msg);
       console.log('Message sent:', infoResponse);
     } catch (error) {
