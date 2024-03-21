@@ -26,7 +26,7 @@
 
 Backend para recibir datos de un formulario y enviarlo a un correo especifico a traves de SendGrid.
 
-## Pre-rrequisitos
+## Prerrequisitos
 
 Necesitas tener una cuenta en Send Grid (puedes autenticarte con una cuenta de Google)
 
@@ -64,9 +64,19 @@ $ pnpm run start
 $ pnpm run start:dev
 
 # production mode
+$ pnpm run build
 $ pnpm run start:prod
 ```
 
 ## Ruta POST
 
 ejemplo local: http://localhost:3000/mail
+
+```bash
+body
+{
+  "name":"pepito",
+  "subject": "consulta sobre repositorio",
+  "message":"probando mail service hecho con Nest"
+}
+```
