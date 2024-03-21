@@ -41,8 +41,8 @@ Desde su Panel necesitas acceder a Settings para hacer 2 pasos esenciales pero i
 ## .env
 
 ```bash
-SENDGRID_API_KEY=tu-API-KEY
-SENDGRID_MAIL_AUTH=tu-EMAIL-VERIFICADO
+SENDGRID_API_KEY=tu-api-key
+SENDGRID_MAIL_AUTH=tu-email-verificado
 
 PORT=un-Puerto
 MAIL_TO=el-Correo-Que-Debe-Recibir
