@@ -22,17 +22,39 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## Descripción
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Backend para recibir datos de un formulario y enviarlo a un correo especifico a traves de SendGrid.
 
-## Installation
+## Prerrequisitos
+
+Necesitas tener una cuenta en Send Grid (puedes autenticarte con una cuenta de Google)
+
+Desde su Panel necesitas acceder a Settings para hacer 2 pasos esenciales pero independientes.
+* CREAR UNA API KEY
+* VERIFICAR EL EMAIL QUE HARA DE "TRANSPORTE"
+
+![SendGrid - Google Chrome 3_20_2024 1_23_01 AM](https://github.com/ejguercio/nest-email-service/assets/122571261/df34ca5f-e37f-485c-9c5a-420426e318ed)
+
+![SendGrid - Google Chrome 3_20_2024 1_26_31 AM](https://github.com/ejguercio/nest-email-service/assets/122571261/92987a1a-85e4-469d-a1de-758da3fa566a)
+
+## .env
+
+```bash
+SENDGRID_API_KEY=tu-API-KEY
+SENDGRID_MAIL_AUTH=tu-EMAIL-VERIFICADO
+
+PORT=un-Puerto
+MAIL_TO=el-Correo-Que-Debe-Recibir
+```
+
+## Instalación
 
 ```bash
 $ pnpm install
 ```
 
-## Running the app
+## Corriendo la app
 
 ```bash
 # development
@@ -42,32 +64,19 @@ $ pnpm run start
 $ pnpm run start:dev
 
 # production mode
+$ pnpm run build
 $ pnpm run start:prod
 ```
 
-## Test
+## Ruta POST
+
+ejemplo local: http://localhost:3000/mail
 
 ```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+body
+{
+  "name":"pepito",
+  "subject": "consulta sobre repositorio",
+  "message":"probando mail service hecho con Nest"
+}
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
