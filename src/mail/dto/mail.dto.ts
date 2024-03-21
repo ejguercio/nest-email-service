@@ -11,5 +11,5 @@ export class MailToSendDto {
 
   @IsString()
   @Length(2, 1000)
-  text: string;
+  message: string;
 }

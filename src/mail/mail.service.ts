@@ -9,13 +9,13 @@ export class MailService {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   }
 
-  async sendEmail(name: string, subject: string, text: string) {
+  async sendEmail(name: string, subject: string, message: string) {
     try {
       const msg = {
         to: process.env.MAIL_TO, // Destinatario del mensaje
         from: process.env.SENDGRID_MAIL_AUTH, // Correo verificado en SendGrid
         subject,
-        text: `Mensaje de ${name}\n\n${text}`,
+        text: `Mensaje de ${name}\n\n${message}`,
       };
 
       const infoResponse = await sgMail.send(msg);

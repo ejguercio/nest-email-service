@@ -11,7 +11,7 @@ export class MailController {
     await this.mailService.sendEmail(
       mailToSendDto.name,
       mailToSendDto.subject,
-      mailToSendDto.text,
+      mailToSendDto.message,
     );
     return { message: 'Email sent' };
   }
